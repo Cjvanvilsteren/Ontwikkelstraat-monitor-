@@ -20,7 +20,7 @@ import { environments, releases } from '@/data'
 type ViewMode = 'calendar' | 'list'
 
 export function ReleaseCalendarPage() {
-  const [view, setView] = useState<ViewMode>('calendar')
+  const [view, setView] = useState<ViewMode>('list')
   const [anchorDate, setAnchorDate] = useState(new Date())
   const [selectedId, setSelectedId] = useState<string | null>(null)
 
