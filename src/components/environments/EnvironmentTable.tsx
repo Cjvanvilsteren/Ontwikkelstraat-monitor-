@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import { CornerDownRight, Server } from 'lucide-react'
 import { StatusBadge } from '@/components/common/StatusBadge'
-import { CriticalityBadge } from '@/components/common/CriticalityBadge'
 import { EmptyState } from '@/components/common/EmptyState'
 import type { Environment, SupplierComponent } from '@/types'
 import { getSystemName } from '@/lib/lookups'
@@ -41,9 +40,6 @@ export function EnvironmentTable({
               Verantwoordelijke
             </th>
             <th scope="col" className="px-3 py-2.5 text-left text-xs font-medium text-muted-foreground">
-              Kritikaliteit
-            </th>
-            <th scope="col" className="px-3 py-2.5 text-left text-xs font-medium text-muted-foreground">
               Versie
             </th>
           </tr>
@@ -62,9 +58,6 @@ export function EnvironmentTable({
                     <StatusBadge status={env.status} />
                   </td>
                   <td className="px-3 py-2.5 text-muted-foreground">{env.responsible}</td>
-                  <td className="px-3 py-2.5">
-                    <CriticalityBadge criticality={env.criticality} />
-                  </td>
                   <td className="px-3 py-2.5 text-muted-foreground">{env.version}</td>
                 </tr>
                 {components.map((component) => (
@@ -79,9 +72,7 @@ export function EnvironmentTable({
                       <StatusBadge status={component.status} />
                     </td>
                     <td className="px-3 py-2 text-muted-foreground">{component.supplierName}</td>
-                    <td className="px-3 py-2 text-muted-foreground" colSpan={2}>
-                      –
-                    </td>
+                    <td className="px-3 py-2 text-muted-foreground">–</td>
                   </tr>
                 ))}
               </Fragment>
