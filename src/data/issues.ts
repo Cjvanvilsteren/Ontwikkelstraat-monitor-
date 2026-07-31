@@ -1,0 +1,68 @@
+import type { Issue } from '@/types'
+import { atDay } from '@/utils/dates'
+
+export const issues: Issue[] = [
+  {
+    id: 'issue-01',
+    title: 'Verhoogde responstijden op de betaalflow',
+    environmentId: 'env-12',
+    status: 'Open',
+    severity: 'High',
+    reportedAt: atDay(0, 7, 45),
+    description: 'Klanten ervaren trage responses tijdens het afrekenen via de Payment API.',
+  },
+  {
+    id: 'issue-02',
+    title: 'SSO-verstoring in de Klantenservice Tool',
+    environmentId: 'env-16',
+    status: 'Open',
+    severity: 'High',
+    reportedAt: atDay(0, 6, 20),
+    description: 'Medewerkers kunnen niet inloggen door een storing bij de identiteitsprovider.',
+  },
+  {
+    id: 'issue-03',
+    title: 'SMS-failover nog in uitvoering',
+    environmentId: 'env-16',
+    status: 'In Progress',
+    severity: 'Medium',
+    reportedAt: atDay(-1, 9, 0),
+    description: 'Overschakeling naar de secundaire sms-provider loopt.',
+  },
+  {
+    id: 'issue-04',
+    title: 'Trage laadtijden in testomgeving',
+    environmentId: 'env-06',
+    status: 'In Progress',
+    severity: 'Low',
+    reportedAt: atDay(-2, 11, 0),
+    description: 'De Android testomgeving reageert traag na de laatste dataload.',
+  },
+  {
+    id: 'issue-05',
+    title: 'Verouderde testdata in iOS testomgeving',
+    environmentId: 'env-02',
+    status: 'Resolved',
+    severity: 'Low',
+    reportedAt: atDay(-6, 9, 0),
+    description: 'Testdataset is inmiddels ververst.',
+  },
+  {
+    id: 'issue-06',
+    title: 'Kortstondige piekbelasting na app-update',
+    environmentId: 'env-08',
+    status: 'Resolved',
+    severity: 'Medium',
+    reportedAt: atDay(-9, 13, 0),
+    description: 'Automatisch opgeschaald, geen verdere impact geconstateerd.',
+  },
+  {
+    id: 'issue-07',
+    title: 'Onboardingscherm toont verkeerde taal',
+    environmentId: 'env-04',
+    status: 'Open',
+    severity: 'Low',
+    reportedAt: atDay(-1, 15, 0),
+    description: 'Een deel van de gebruikers ziet Engelse tekst in plaats van Nederlands.',
+  },
+]
